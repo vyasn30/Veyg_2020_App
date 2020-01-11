@@ -1,9 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:veyg_2020/models/department.dart';
+import 'package:veyg_2020/pages/events_page.dart';
 import '../data/department_data.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 class DepartmentPage extends StatefulWidget {
   @override
@@ -55,51 +56,61 @@ class DepartmentState extends State {
     final double offset = isActive ? 20 : 0;
     final double top = isActive ? 100 : 200;
 
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 500),
-      curve: Curves.easeOutQuint,
-      margin: EdgeInsets.only(top: top, bottom: 50, right: 30),
-      child: ClipRRect(
-        // make sure we apply clip it properly
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.black.withOpacity(0.4),
-            ),
-            alignment: Alignment.center,
+    return GestureDetector(
+      onTap: () => _navigate(deptartment_data[position]),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeOutQuint,
+        margin: EdgeInsets.only(top: top, bottom: 50, right: 30),
+        child: ClipRRect(
+          // make sure we apply clip it properly
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
             child: Container(
-              margin: EdgeInsets.all(10.0),
-              padding: EdgeInsets.all(20.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color.fromRGBO(0, 0, 0, 0.1),
+                color: Colors.black.withOpacity(0.4),
               ),
-              child: Text(
-                deptartment_data[position].name,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 34,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white),
+              alignment: Alignment.center,
+              child: Container(
+                margin: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color.fromRGBO(0, 0, 0, 0.1),
+                ),
+                child: Text(deptartment_data[position].name,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.comfortaa(
+                      textStyle: TextStyle(
+                          fontSize: 38,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white),
+                    )),
               ),
             ),
           ),
         ),
+        decoration: BoxDecoration(
+            color: Colors.indigo,
+            image: DecorationImage(
+                image: ExactAssetImage(deptartment_data[position].image),
+                fit: BoxFit.cover),
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black54,
+                  blurRadius: blur,
+                  offset: Offset(offset, offset))
+            ]),
       ),
-      decoration: BoxDecoration(
-          color: Colors.indigo,
-          image: DecorationImage(
-              image: ExactAssetImage(deptartment_data[position].image),
-              fit: BoxFit.cover),
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black54,
-                blurRadius: blur,
-                offset: Offset(offset, offset))
-          ]),
     );
+  }
+
+  _navigate(Department deptartment_data) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => EventsPage(deptartment_data)));
   }
 }

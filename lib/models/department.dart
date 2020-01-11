@@ -1,4 +1,5 @@
 import 'dart:ui';
+import '../data/department_data.dart';
 
 class Department {
   String name;
@@ -12,4 +13,5 @@ class Department {
     this.color
   });
   
+
 }

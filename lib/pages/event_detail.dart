@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EventDetails extends StatefulWidget {
+  final int eventId;
+
+  EventDetails(this.eventId);
   @override
   _EventDetailsState createState() => _EventDetailsState();
 }
