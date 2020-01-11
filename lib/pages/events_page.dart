@@ -28,9 +28,9 @@ class EventsPage extends StatelessWidget {
             },),
             automaticallyImplyLeading: false,
             elevation: 10,
-            expandedHeight: 100.0,
+            expandedHeight: 150.0,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(dept.name),
+              title: Text(dept.name, style: GoogleFonts.comfortaa(textStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),),
             ),
             backgroundColor: Colors.transparent,
           ),
