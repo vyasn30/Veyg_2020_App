@@ -31,6 +31,9 @@ dependencies:
 
 dev_dependencies:
   snaplist: ^0.1.8
+  flip_panel: ^1.0.1
+
+
   flutter_test:
     sdk: flutter
 
@@ -50,6 +53,7 @@ flutter:
   assets:
     - assets/
     - assets/department_images/
+    - assets/animations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

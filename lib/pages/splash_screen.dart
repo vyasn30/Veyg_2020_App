@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:veyg_2020/pages/department_page.dart';
+import 'package:veyg_2020/pages/homepage.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: InkWell(
         onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (context){
-            return DepartmentPage();
+            return HomePage();
           }));
         },
             child: Container(

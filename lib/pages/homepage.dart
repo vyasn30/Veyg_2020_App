@@ -1,17 +1,11 @@
 import 'dart:ui';
 import 'package:flip_panel/flip_panel.dart';
-import 'package:fluttie/fluttie.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flip_panel/flip_panel.dart';
-import 'package:flutter_lottie/flutter_lottie.dart';
 
 final digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var instance = Fluttie();
-var emojiComposition = await instance.loadAnimationFromAsset(
-"assets/animations/emoji.json", //Replace this string with your actual file
-);
 
 class HomePage extends StatefulWidget {
   @override
@@ -94,23 +88,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-//                Text(
-//                  'Timer will be here',
-//                  style: TextStyle(
-//                    color: Colors.white,
-//                    fontSize: 24.0,
-//                    fontWeight: FontWeight.bold,
-//                  ),
-//                ),
                 SizedBox(height: 10.0),
-//                Text(
-//                  'Classify this transaction into a \nparticular category',
-//                  style: TextStyle(
-//                    color: Colors.white,
-//                    fontSize: 14.0,
-//                    fontWeight: FontWeight.normal,
-//                  ),
-//                ),
                 Container(
                   padding: EdgeInsets.only(top: 16.0),
                   child: Column(
@@ -174,59 +152,7 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: 20.0),
                       Row(
                         children: <Widget>[
-//                          Expanded(
-//                            child: Stack(
-//                              children: <Widget>[
-//                                ClipRect(
-//                                  child: BackdropFilter(
-//                                    filter: ImageFilter.blur(
-//                                      sigmaX: 10.0,
-//                                      sigmaY: 10.0,
-//                                    ),
-//                                    child: Container(
-//                                      decoration: BoxDecoration(
-//                                          borderRadius:
-//                                          BorderRadius.circular(30.0),
-//                                          color: Color(0x89545782)),
-//                                      alignment: Alignment.center,
-//                                      padding: EdgeInsets.only(
-//                                          left: 40.0, right: 40.0),
-//                                      child: Column(
-//                                        children: <Widget>[
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                          CircleAvatar(
-//                                            radius: 30.0,
-//                                            backgroundColor: Color(0xFFff47e1),
-//                                            child: Icon(
-//                                              FontAwesomeIcons.shoppingBag,
-//                                              color: Colors.white,
-//                                            ),
-//                                          ),
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                          Text(
-//                                            'Shopping',
-//                                            style: TextStyle(
-//                                              color: Color(0xFFff47e1),
-//                                              fontSize: 14.0,
-//                                              fontWeight: FontWeight.normal,
-//                                            ),
-//                                          ),
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                        ],
-//                                      ),
-//                                    ),
-//                                  ),
-//                                ),
-//                              ],
-//                            ),
-//                          ),
-//                          SizedBox(width: 20.0),
+//
                           Expanded(
                             child: Stack(
                               children: <Widget>[
@@ -337,60 +263,6 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-
-//                          SizedBox(height: 20.0),
-//                          Expanded(
-//                            child: Stack(
-//                              children: <Widget>[
-//                                ClipRect(
-//                                  child: BackdropFilter(
-//                                    filter: ImageFilter.blur(
-//                                      sigmaX: 10.0,
-//                                      sigmaY: 10.0,
-//                                    ),
-//                                    child: Container(
-//                                      decoration: BoxDecoration(
-//                                          borderRadius:
-//                                          BorderRadius.circular(30.0),
-//                                          color: Color(0x89545782)),
-//                                      alignment: Alignment.center,
-//                                      padding: EdgeInsets.only(
-//                                          left: 40.0, right: 40.0),
-//                                      child: Column(
-//                                        children: <Widget>[
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                          CircleAvatar(
-//                                            radius: 30.0,
-//                                            backgroundColor: Color(0xFF0fdf5f),
-//                                            child: Icon(
-//                                              FontAwesomeIcons.pepperHot,
-//                                              color: Colors.white,
-//                                            ),
-//                                          ),
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                          Text(
-//                                            'Grocery',
-//                                            style: TextStyle(
-//                                              color: Color(0xFF0fdf5f),
-//                                              fontSize: 14.0,
-//                                              fontWeight: FontWeight.normal,
-//                                            ),
-//                                          ),
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                        ],
-//                                      ),
-//                                    ),
-//                                  ),
-//                                ),
-//                              ],
-//                            ),
-//                          ),
                         ],
                       ),
                       SizedBox(height: 20.0),
@@ -448,60 +320,6 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-
-//                          SizedBox(height: 20.0),
-//                          Expanded(
-//                            child: Stack(
-//                              children: <Widget>[
-//                                ClipRect(
-//                                  child: BackdropFilter(
-//                                    filter: ImageFilter.blur(
-//                                      sigmaX: 10.0,
-//                                      sigmaY: 10.0,
-//                                    ),
-//                                    child: Container(
-//                                      decoration: BoxDecoration(
-//                                          borderRadius:
-//                                          BorderRadius.circular(30.0),
-//                                          color: Color(0x89545782)),
-//                                      alignment: Alignment.center,
-//                                      padding: EdgeInsets.only(
-//                                          left: 40.0, right: 40.0),
-//                                      child: Column(
-//                                        children: <Widget>[
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                          CircleAvatar(
-//                                            radius: 30.0,
-//                                            backgroundColor: Color(0xFF0fdf5f),
-//                                            child: Icon(
-//                                              FontAwesomeIcons.pepperHot,
-//                                              color: Colors.white,
-//                                            ),
-//                                          ),
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                          Text(
-//                                            'Grocery',
-//                                            style: TextStyle(
-//                                              color: Color(0xFF0fdf5f),
-//                                              fontSize: 14.0,
-//                                              fontWeight: FontWeight.normal,
-//                                            ),
-//                                          ),
-//                                          SizedBox(
-//                                            height: 40.0,
-//                                          ),
-//                                        ],
-//                                      ),
-//                                    ),
-//                                  ),
-//                                ),
-//                              ],
-//                            ),
-//                          ),
                         ],
                       ),
                     ],
@@ -512,23 +330,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-
-//      bottomNavigationBar: BottomNavigationBar(
-//        iconSize: 28.0,
-//        backgroundColor: Color(0xFF373956),
-//        items: [
-//          BottomNavigationBarItem(
-//              icon: new Icon(Icons.date_range, color: Color(0xFFFF56BF)),
-//              title: new Text('')),
-//          BottomNavigationBarItem(
-//              icon: new Icon(Icons.equalizer, color: Color(0xFF6f739b)),
-//              title: new Text('')),
-//          BottomNavigationBarItem(
-//            icon: new Icon(Icons.person, color: Color(0xFF6f739b)),
-//            title: new Text(''),
-//          ),
-//        ],
-//      ),
     );
   }
 }
