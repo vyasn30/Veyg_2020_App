@@ -207,20 +207,3 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class ca {
-  static final white = Colors.white;
-  static final bgColor = Color(0xFF2b2c4e);
-  static final bottomBg = Color(0xFF373956);
-  static final containerBg = Color(0x89545782);
-  static final navItem = Color(0xFF6f739b);
-  static final navItemSelected = Color(0xFFFF56BF);
-  static final gradient1 = Color(0xFFff94a9);
-  static final gradient2 = Color(0xFFff94a9);
-  static final gradient3 = Color(0xFFff40c4);
-  static final item1 = Color(0xFF1fa2f5);
-  static final item2 = Color(0xFF8359ff);
-  static final item3 = Color(0xFFff47e1);
-  static final item4 = Color(0xFFff9550);
-  static final item5 = Color(0xFF4975ff);
-  static final item6 = Color(0xFF0fdf5f);
-}

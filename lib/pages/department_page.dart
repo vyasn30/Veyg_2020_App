@@ -38,7 +38,8 @@ class DepartmentState extends State {
       body: AnimatedContainer(
         duration: Duration(milliseconds: 1500),
         curve: Curves.easeOutQuint,
-        decoration: BoxDecoration(color: deptartment_data[currentPage].color),
+        decoration: BoxDecoration(
+            gradient: deptartment_data[currentPage].linearGradient),
         child: PageView.builder(
           controller: ctrl,
           itemBuilder: (context, position) {
@@ -72,22 +73,14 @@ class DepartmentState extends State {
                 color: Colors.black.withOpacity(0.4),
               ),
               alignment: Alignment.center,
-              child: Container(
-                margin: EdgeInsets.all(10.0),
-                padding: EdgeInsets.all(20.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(0, 0, 0, 0.1),
-                ),
-                child: Text(deptartment_data[position].name,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.comfortaa(
-                      textStyle: TextStyle(
-                          fontSize: 38,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white),
-                    )),
-              ),
+              child: Text(deptartment_data[position].name,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.comfortaa(
+                    textStyle: TextStyle(
+                        fontSize: 38,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white),
+                  )),
             ),
           ),
         ),
@@ -108,9 +101,7 @@ class DepartmentState extends State {
   }
 
   _navigate(Department deptartment_data) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => EventsPage(deptartment_data)));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => EventsPage(deptartment_data)));
   }
 }

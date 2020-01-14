@@ -11,62 +11,62 @@ class EventsPage extends StatelessWidget {
   List<Event> eventList;
   EventsPage(this.dept) {
     eventList = Event.getEventByDept(dept.id);
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
-      body: CustomScrollView(
-        
-        slivers: <Widget>[
-          SliverAppBar(
-            pinned: false,
-            leading: IconButton(icon: Icon(FontAwesomeIcons.arrowLeft),iconSize: 30,onPressed: (){
-              Navigator.pop(context);
-            },),
-            automaticallyImplyLeading: false,
-            elevation: 10,
-            expandedHeight: 150.0,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text(dept.name, style: GoogleFonts.comfortaa(textStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),),
-            ),
-            backgroundColor: Colors.transparent,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              const Color(0xFF00172D),
+              const Color(0xFF00264D),
+            ],
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              return SimpleFoldingCell(
-                  frontWidget: _buildFrontWidget(index),
-                  innerTopWidget: _buildInnerTopWidget(index),
-                  innerBottomWidget: _buildInnerBottomWidget(index),
-                  cellSize: Size(MediaQuery.of(context).size.width, 200),
-                  padding: EdgeInsets.all(15),
-                  animationDuration: Duration(milliseconds: 300),
-                  borderRadius: 10,
-                  onOpen: () => print('$index cell opened'),
-                  onClose: () => print('$index cell closed'));
-            }, childCount: eventList.length),
-          )
-        ],
-        // child: Container(
-        //   color: Color(0xFF2e282a),
-        //   child: ListView.builder(
-        //     itemCount: eventList.length,
-        //     itemBuilder: (context, index) {
-        //       return SimpleFoldingCell(
-        //           frontWidget: _buildFrontWidget(index),
-        //           innerTopWidget: _buildInnerTopWidget(index),
-        //           innerBottomWidget: _buildInnerBottomWidget(index),
-        //           cellSize: Size(MediaQuery.of(context).size.width, 200),
-        //           padding: EdgeInsets.all(15),
-        //           animationDuration: Duration(milliseconds: 300),
-        //           borderRadius: 10,
-        //           onOpen: () => print('$index cell opened'),
-        //           onClose: () => print('$index cell closed'));
-        //     },
-        //   ),
-        // ),
+        ),
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              pinned: false,
+              leading: IconButton(
+                icon: Icon(FontAwesomeIcons.arrowLeft),
+                iconSize: 30,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              automaticallyImplyLeading: false,
+              elevation: 10,
+              expandedHeight: 150.0,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text(
+                  dept.name,
+                  style: GoogleFonts.comfortaa(
+                      textStyle:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                ),
+              ),
+              backgroundColor: Colors.transparent,
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate((context, index) {
+                return SimpleFoldingCell(
+                    frontWidget: _buildFrontWidget(index),
+                    innerTopWidget: _buildInnerTopWidget(index),
+                    innerBottomWidget: _buildInnerBottomWidget(index),
+                    cellSize: Size(MediaQuery.of(context).size.width, 150),
+                    padding: EdgeInsets.all(15),
+                    animationDuration: Duration(milliseconds: 300),
+                    borderRadius: 10,
+                    onOpen: () => print('$index cell opened'),
+                    onClose: () => print('$index cell closed'));
+              }, childCount: eventList.length),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -106,6 +106,8 @@ class EventsPage extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             "${eventList[index].description}",
+            maxLines: 5,
+             overflow: TextOverflow.ellipsis,
             style: GoogleFonts.josefinSans(
               textStyle: TextStyle(
                   color: Color(0xFF2e282a),
