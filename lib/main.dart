@@ -9,7 +9,7 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: "Veyg2020",
-    home: HomePage(),
+    home: SplashScreen(),
   ));
 }
 

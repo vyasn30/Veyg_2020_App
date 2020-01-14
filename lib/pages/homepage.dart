@@ -1,9 +1,12 @@
+import 'dart:async';
 import 'dart:ui';
 import 'package:flip_panel/flip_panel.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:veyg_2020/pages/department_page.dart';
 
 final digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -16,6 +19,19 @@ var cardAspectRatio = 12.0 / 16.0;
 var widgetAspectRatio = cardAspectRatio * 1.2;
 
 class _HomePageState extends State<HomePage> {
+  int timeRemaining;
+
+  @override
+  void initState() {
+    var veygDate = new DateTime.utc(2020, DateTime.february, 19);
+    var today = new DateTime.now();
+    int difference = veygDate.difference(today).inSeconds;
+    timeRemaining = difference;
+    // Timer.periodic(Duration(seconds: 1), (some) {
+    //   setState(() {});
+    // });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,274 +70,34 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    FlipPanel<int>.stream(
-                      itemStream: Stream.periodic(
-                          Duration(milliseconds: 1000), (count) => count % 10),
-                      itemBuilder: (context, value) => Container(
-                        color: Colors.black,
-                        padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                        child: Text(
-                          '$value',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 50.0,
-                              color: Colors.white),
-                        ),
-                      ),
-                      initValue: 0,
-                    ),
-                    FlipPanel<int>.stream(
-                      itemStream: Stream.periodic(
-                          Duration(milliseconds: 1000), (count) => count % 10),
-                      itemBuilder: (context, value) => Container(
-                        color: Colors.black,
-                        padding: const EdgeInsets.symmetric(horizontal: 6.0),
-                        child: Text(
-                          '$value',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 50.0,
-                              color: Colors.white),
-                        ),
-                      ),
-                      initValue: 0,
-                    ),
+                    FlipClock.reverseCountdown(
+                      digitColor: Colors.white70,
+                      backgroundColor: Colors.transparent,
+                      digitSize: 50,
+                      duration: Duration(seconds: timeRemaining),
+                      height: 90,
+                      width: 30,
+                    )
                   ],
                 ),
+                SizedBox(height: 10.0),
+                // _timer(),
                 SizedBox(height: 10.0),
                 Container(
                   padding: EdgeInsets.only(top: 16.0),
                   child: Column(
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Stack(
-                              children: <Widget>[
-                                ClipRect(
-                                  child: BackdropFilter(
-                                    filter: ImageFilter.blur(
-                                      sigmaX: 10.0,
-                                      sigmaY: 10.0,
-                                    ),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          color: Color(0x89545782)),
-                                      alignment: Alignment.center,
-                                      padding: EdgeInsets.only(
-                                          left: 40.0, right: 40.0),
-                                      child: Column(
-                                        children: <Widget>[
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                          CircleAvatar(
-                                            radius: 30.0,
-                                            backgroundColor: Color(0xFF8359ff),
-                                            child: Icon(
-                                              Icons.directions_bus,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                          Text(
-                                            'Transport',
-                                            style: TextStyle(
-                                              color: Color(0xFF8359ff),
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> DepartmentPage())),
+                        child: _optionCard("Explore Events", Color(0xFF8359ff),
+                        ),
                       ),
                       SizedBox(height: 20.0),
-                      Row(
-                        children: <Widget>[
-//
-                          Expanded(
-                            child: Stack(
-                              children: <Widget>[
-                                ClipRect(
-                                  child: BackdropFilter(
-                                    filter: ImageFilter.blur(
-                                      sigmaX: 10.0,
-                                      sigmaY: 10.0,
-                                    ),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          color: Color(0x89545782)),
-                                      alignment: Alignment.center,
-                                      padding: EdgeInsets.only(
-                                          left: 40.0, right: 40.0),
-                                      child: Column(
-                                        children: <Widget>[
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                          CircleAvatar(
-                                            radius: 30.0,
-                                            backgroundColor: Color(0xFFff9550),
-                                            child: Icon(
-                                              FontAwesomeIcons
-                                                  .fileInvoiceDollar,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                          Text(
-                                            'Bills',
-                                            style: TextStyle(
-                                              color: Color(0xFFff9550),
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                      _optionCard("VEYG_2019", Color(0xFF4975ff)),
                       SizedBox(height: 20.0),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Stack(
-                              children: <Widget>[
-                                ClipRect(
-                                  child: BackdropFilter(
-                                    filter: ImageFilter.blur(
-                                      sigmaX: 10.0,
-                                      sigmaY: 10.0,
-                                    ),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          color: Color(0x89545782)),
-                                      alignment: Alignment.center,
-                                      padding: EdgeInsets.only(
-                                          left: 40.0, right: 40.0),
-                                      child: Column(
-                                        children: <Widget>[
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                          CircleAvatar(
-                                            radius: 30.0,
-                                            backgroundColor: Color(0xFF4975ff),
-                                            child: Icon(
-                                              FontAwesomeIcons.film,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                          Text(
-                                            'Entertainment',
-                                            style: TextStyle(
-                                              color: Color(0xFF4975ff),
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                      _optionCard("Coordinators", Color(0xFFff9550)),
                       SizedBox(height: 20.0),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Stack(
-                              children: <Widget>[
-                                ClipRect(
-                                  child: BackdropFilter(
-                                    filter: ImageFilter.blur(
-                                      sigmaX: 10.0,
-                                      sigmaY: 10.0,
-                                    ),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0),
-                                          color: Color(0x89545782)),
-                                      alignment: Alignment.center,
-                                      padding: EdgeInsets.only(
-                                          left: 40.0, right: 40.0),
-                                      child: Column(
-                                        children: <Widget>[
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                          CircleAvatar(
-                                            radius: 30.0,
-                                            backgroundColor: Color(0xFF4975ff),
-                                            child: Icon(
-                                              FontAwesomeIcons.film,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                          Text(
-                                            'Entertainment',
-                                            style: TextStyle(
-                                              color: Color(0xFF4975ff),
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 40.0,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                      _optionCard("Entertainment", Color(0xFF4975ff))
                     ],
                   ),
                 )
@@ -330,6 +106,103 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _timer() {
+    var veygDate = new DateTime.utc(2020, DateTime.february, 19);
+    var today = new DateTime.now();
+    Duration difference = veygDate.difference(today);
+    return Row(
+      children: <Widget>[
+        Text(difference.inDays.toString()),
+        SizedBox(
+          width: 10,
+        ),
+        Text(difference.inHours.toString()),
+        SizedBox(
+          width: 10,
+        ),
+        Text(difference.inMinutes.toString()),
+        SizedBox(
+          width: 10,
+        ),
+        Text(difference.inSeconds.toString()),
+      ],
+    );
+  }
+
+  _optionCard(String optionTitle, Color bgColour) {
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Stack(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+                child: ClipRect(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(
+                      sigmaX: 10.0,
+                      sigmaY: 10.0,
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30.0),
+                          color: Color(0x89545782)),
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(left: 40.0, right: 40.0),
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(
+                            height: 40.0,
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              CircleAvatar(
+                                radius: 30.0,
+                                backgroundColor: bgColour,
+                                child: Icon(
+                                  FontAwesomeIcons.book,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: <Widget>[
+                              Text(
+                                optionTitle,
+                                style: GoogleFonts.comfortaa(
+                                  textStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 32.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 30.0,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
