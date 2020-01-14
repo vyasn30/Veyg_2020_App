@@ -1,6 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:veyg_2020/pages/homepage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -9,42 +11,179 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool firstAnimComplete = false;
+  bool secondtAnimComplete = false;
+  bool thirdAnimComplete = false;
+
+  bool firstNotPlayed = true;
+  bool secondNotPlayed = true;
+  bool thirdNotPlayed = true;
+
+  // List<Widget> widgetList = ;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF2b2c4e),
-      body: GestureDetector(
-        onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return HomePage();
-          }));
-        },
-        child: Column(
-          children: [
-            SizedBox(
-              height: 50,
-            ),
-            SizedBox(
-              width: 250.0,
-              child: TypewriterAnimatedTextKit(
-                  speed: Duration(milliseconds: 700),
-                  onTap: () {
-                    print("Tap Event");
-                  },
-                  text: [
-                    "Veyg 2020",
-                  ],
-                  textStyle: TextStyle(
-                      fontSize: 30.0, fontFamily: "Agne", color: Colors.white),
-                  textAlign: TextAlign.start,
-                  alignment:
-                      AlignmentDirectional.topStart // or Alignment.topLeft
-                  ),
-            ),
-            Image.asset("assets/logo.png"),
-          ],
+      body: Container(
+        margin: EdgeInsets.fromLTRB(5, 30, 5, 5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: Colors.white,
+          ),
         ),
+        child: Column(children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Icon(
+                  FontAwesomeIcons.solidCircle,
+                  color: Colors.green,
+                ),
+                SizedBox(
+                  width: 6,
+                ),
+                Icon(
+                  FontAwesomeIcons.solidCircle,
+                  color: Colors.yellow,
+                ),
+                SizedBox(
+                  width: 6,
+                ),
+                Icon(
+                  FontAwesomeIcons.solidCircle,
+                  color: Colors.red,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 40),
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "S@ffrony",
+                  style: GoogleFonts.bitter(
+                      textStyle:
+                          TextStyle(fontSize: 26.0, color: Colors.greenAccent)),
+                ),
+                Icon(
+                  FontAwesomeIcons.chevronRight,
+                  color: Colors.grey,
+                  size: 30,
+                ),
+                TypewriterAnimatedTextKit(
+                    totalRepeatCount: 1,
+                    onFinished: () {
+                      // widgetList.add(Text(""));
+                      setState(() {
+                        firstAnimComplete = true;
+                      });
+                    },
+                    text: [
+                      "./VEYG_2020",
+                    ],
+                    speed: Duration(milliseconds: 400),
+                    textStyle: GoogleFonts.bitter(
+                        textStyle:
+                            TextStyle(fontSize: 30.0, color: Colors.white)),
+                    textAlign: TextAlign.start,
+                    alignment:
+                        AlignmentDirectional.topStart // or Alignment.topLeft
+                    ),
+              ],
+            ),
+          ),
+          Row(
+            children: <Widget>[
+              SizedBox(
+                width: 20,
+              ),
+              _buildSecondWidget(),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              SizedBox(
+                width: 20,
+              ),
+              _buildThirdWidget(),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              SizedBox(
+                width: 20,
+              ),
+              _buildFourthWidget()
+            ],
+          )
+        ]),
       ),
     );
+  }
+
+  _buildSecondWidget() {
+    return firstAnimComplete
+        ? TypewriterAnimatedTextKit(
+            totalRepeatCount: 1,
+            onFinished: () {
+              // widgetList.add(Text(""));
+              setState(() {
+                secondtAnimComplete = true;
+                firstNotPlayed = false;
+              });
+            },
+            text: [
+              "Loading...\n",
+            ],
+            textStyle: GoogleFonts.bitter(
+                textStyle: TextStyle(fontSize: 24.0, color: Colors.white)),
+            textAlign: TextAlign.start,
+            alignment: AlignmentDirectional.topStart // or Alignment.topLeft
+            )
+        : Container();
+  }
+
+  _buildThirdWidget() {
+    return secondtAnimComplete
+        ? TypewriterAnimatedTextKit(
+            totalRepeatCount: 1,
+            onFinished: () {
+              // widgetList.add(Text(""));
+              setState(() {
+                thirdAnimComplete = true;
+              });
+            },
+            text: ["Added Fun..", "Added Learning..", "Ready??\n"],
+            textStyle: GoogleFonts.bitter(
+                textStyle: TextStyle(fontSize: 24.0, color: Colors.white)),
+            textAlign: TextAlign.start,
+            alignment: AlignmentDirectional.topStart // or Alignment.topLeft
+            )
+        : Container();
+  }
+
+  _buildFourthWidget() {
+    return thirdAnimComplete
+        ? TypewriterAnimatedTextKit(
+          onFinished: (){
+             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+            return HomePage();
+          }));
+          },
+            totalRepeatCount: 1,
+            text: ["All done", "Let's Start"],
+            textStyle: GoogleFonts.bitter(
+                textStyle: TextStyle(fontSize: 24.0, color: Colors.white)),
+            textAlign: TextAlign.start,
+            alignment: AlignmentDirectional.topStart // or Alignment.topLeft
+            )
+        : Container();
   }
 }
