@@ -17,7 +17,7 @@ List<Department> dept_data = [
   ),
   Department(
     id: 1,
-    name: "Mechanical",
+    name: "Mechanical & Automobile",
     image: "assets/department_images/mechanical.jpg",
     linearGradient: LinearGradient(
       begin: Alignment.topLeft,
@@ -36,22 +36,21 @@ List<Department> dept_data = [
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        const Color(0xFF66B5F6),
-        const Color(0xFFBFE299
-),
+        const Color(0xFF29524A),
+        const Color(0xFFB8C6DB),
       ],
     ),
   ),
   Department(
     id: 3,
-    name: "Auto Mobile",
-    image: "assets/department_images/auto.jpg",
+    name: "Electrical & \nElectronics",
+    image: "assets/department_images/electronics.jpg",
     linearGradient: LinearGradient(
       begin: Alignment.topLeft,
       end: Alignment.bottomRight,
       colors: [
-        const Color(0xFF29524A),
-        const Color(0xFFB8C6DB),
+        const Color(0xFF66B5F6),
+        const Color(0xFFBFE299),
       ],
     ),
   ),

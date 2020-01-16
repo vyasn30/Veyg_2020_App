@@ -4,13 +4,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:veyg_2020/models/department.dart';
 import 'package:veyg_2020/models/event.dart';
+import 'package:veyg_2020/models/event_detail_model.dart';
 import 'package:veyg_2020/pages/event_detail.dart';
 
 class EventsPage extends StatelessWidget {
   final Department dept;
-  List<Event> eventList;
+  List<EventDetail> eventList;
   EventsPage(this.dept) {
-    eventList = Event.getEventByDept(dept.id);
+    eventList = EventDetail.getEventByDept(dept.id);
   }
 
   @override
@@ -40,7 +41,7 @@ class EventsPage extends StatelessWidget {
               ),
               automaticallyImplyLeading: false,
               elevation: 10,
-              expandedHeight: 150.0,
+              expandedHeight: 200.0,
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
                   dept.name,
@@ -105,7 +106,7 @@ class EventsPage extends StatelessWidget {
           color: Color(0xFFff9234),
           alignment: Alignment.center,
           child: Text(
-            "${eventList[index].description}",
+            "${eventList[index].introduction}",
             maxLines: 5,
              overflow: TextOverflow.ellipsis,
             style: GoogleFonts.josefinSans(
@@ -146,7 +147,7 @@ class EventsPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      EventDetails(eventList[index].id)));
+                                      EventDetails(eventList[index])));
                         },
                       ),
                     ],
