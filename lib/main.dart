@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:veyg_2020/pages/homepage.dart';
 import 'package:veyg_2020/pages/splash_screen.dart';
 
+import 'pages/splash_screen.dart';
+
 void main() {
   runApp(MyApp());
 
@@ -16,9 +18,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Slabo'),
-      home: HomePage(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

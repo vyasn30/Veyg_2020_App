@@ -6,12 +6,14 @@ import 'package:veyg_2020/models/department.dart';
 import 'package:veyg_2020/models/event.dart';
 import 'package:veyg_2020/models/event_detail_model.dart';
 import 'package:veyg_2020/pages/event_detail.dart';
+import 'package:veyg_2020/services/event_data_service.dart';
 
 class EventsPage extends StatelessWidget {
   final Department dept;
   List<EventDetail> eventList;
   EventsPage(this.dept) {
-    eventList = EventDetail.getEventByDept(dept.id);
+    // eventList = EventDetail.getEventByDept(dept.id);
+    eventList = EventDataService.getEventByDept(dept.id);
   }
 
   @override
