@@ -17,7 +17,7 @@ class NoConnectionError extends StatelessWidget {
       child: new InkWell(
         onTap: () {    //Redirect to Menu Page
           print("calling Function");
-          Navigator.push(
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute<Null>(
                 builder: (BuildContext context) => SplashScreen(),

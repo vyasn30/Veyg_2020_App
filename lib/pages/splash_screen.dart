@@ -149,6 +149,23 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               _buildFourthWidget()
             ],
+          ),
+          Flexible(
+            child: Container(),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              FlatButton(
+                child: Text(
+                  "skip >>",
+                  style: TextStyle(color: Colors.white70),
+                ),
+                onPressed: () {
+                  navigate();
+                },
+              )
+            ],
           )
         ]),
       ),
@@ -204,10 +221,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return thirdAnimComplete
         ? TypewriterAnimatedTextKit(
             onFinished: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) {
-                return HomePage();
-              }));
+              navigate();
             },
             totalRepeatCount: 1,
             text: ["All done", "Let's Start"],
@@ -217,5 +231,11 @@ class _SplashScreenState extends State<SplashScreen> {
             alignment: AlignmentDirectional.topStart // or Alignment.topLeft
             )
         : Container();
+  }
+
+  navigate() {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+      return HomePage();
+    }));
   }
 }
