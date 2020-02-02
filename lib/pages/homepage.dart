@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:veyg_2020/pages/coordinators.dart';
 import 'package:veyg_2020/pages/department_page.dart';
 
 final digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -88,14 +89,25 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: <Widget>[
                       GestureDetector(
-                        onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=> DepartmentPage())),
-                        child: _optionCard("Explore Events", Color(0xFF8359ff),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DepartmentPage())),
+                        child: _optionCard(
+                          "Explore Events",
+                          Color(0xFF8359ff),
                         ),
                       ),
                       SizedBox(height: 20.0),
                       _optionCard("VEYG_2019", Color(0xFF4975ff)),
                       SizedBox(height: 20.0),
-                      _optionCard("Coordinators", Color(0xFFff9550)),
+                      GestureDetector(
+                        child: _optionCard("Coordinators", Color(0xFFff9550)),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Coordinators())),
+                      ),
                       SizedBox(height: 20.0),
                       _optionCard("Entertainment", Color(0xFF4975ff))
                     ],
@@ -206,4 +218,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

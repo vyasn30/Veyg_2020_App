@@ -48,13 +48,19 @@ class _EventDetailsState extends State<EventDetails> {
               ),
               automaticallyImplyLeading: false,
               elevation: 10,
-              expandedHeight: 150.0,
+              expandedHeight: 350.0,
               flexibleSpace: FlexibleSpaceBar(
+                centerTitle: true,
+                titlePadding: EdgeInsets.all(15),
                 title: Text(
                   event.name,
                   style: GoogleFonts.comfortaa(
                       textStyle:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                ),
+                background: Image.asset(
+                  "assets/logo.png",
+                  fit: BoxFit.scaleDown,
                 ),
               ),
               backgroundColor: Colors.transparent,

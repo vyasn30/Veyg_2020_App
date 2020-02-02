@@ -110,7 +110,7 @@ class EventsPage extends StatelessWidget {
           child: Text(
             "${eventList[index].introduction}",
             maxLines: 5,
-             overflow: TextOverflow.ellipsis,
+            overflow: TextOverflow.ellipsis,
             style: GoogleFonts.josefinSans(
               textStyle: TextStyle(
                   color: Color(0xFF2e282a),
