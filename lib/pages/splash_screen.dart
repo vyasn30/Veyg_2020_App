@@ -7,7 +7,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:veyg_2020/pages/homepage.dart';
 import 'package:veyg_2020/services/event_data_service.dart';
-import 'package:connectivity/connectivity.dart';
 import 'network_error.dart';
 
 class SplashScreen extends StatefulWidget {
