@@ -54,4 +54,18 @@ List<Department> dept_data = [
       ],
     ),
   ),
+   Department(
+    id: 4,
+    name: "Non\nTechnical",
+    image: "assets/department_images/sport.jpg",
+    linearGradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        const Color(0xFF66B5F6),
+        const Color(0xFFBFE299),
+      ],
+    ),
+  ),
+  
 ];

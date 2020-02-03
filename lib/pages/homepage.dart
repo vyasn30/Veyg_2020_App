@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:veyg_2020/pages/about/about.dart';
 import 'package:veyg_2020/pages/coordinators.dart';
 import 'package:veyg_2020/pages/department_page.dart';
 import 'package:veyg_2020/pages/gallery/vegy2019.dart';
@@ -115,6 +116,14 @@ class _HomePageState extends State<HomePage> {
                             MaterialPageRoute(
                                 builder: (context) => Coordinators())),
                         child: _optionCard("Coordinators", Color(0xFFff9550)),
+                      ),
+                      SizedBox(height: 20.0),
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AboutPage())),
+                        child: _optionCard("About Veyg", Color(0xFF4975ff)),
                       ),
                       SizedBox(height: 20.0),
                       GestureDetector(
