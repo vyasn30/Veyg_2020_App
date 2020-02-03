@@ -61,6 +61,7 @@ flutter:
     - assets/department_images/
     - assets/animations/
     - assets/veyg_2019/
+    - assets/coordinator/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
