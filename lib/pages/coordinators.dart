@@ -100,16 +100,6 @@ class _CoordinatorsState extends State<Coordinators> {
                             "Hiren Vadher"),
                       ]),
                     ),
-
-                    //     color: _cardBgColor),
-                    // SizedBox(height: 5),
-                    // _inroduction(),
-                    // SizedBox(height: 5),
-                    // _bulletList("Rules", event.rules),
-                    // SizedBox(height: 5),
-                    // _bulletList("Faculty", event.faculty),
-                    // SizedBox(height: 5),
-                    // _bulletList("Student Coordinator", event.studentCoord),
                   )
                 ],
               ),
