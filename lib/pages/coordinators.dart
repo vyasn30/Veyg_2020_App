@@ -7,6 +7,8 @@ class Coordinators extends StatefulWidget {
   _CoordinatorsState createState() => _CoordinatorsState();
 }
 
+const Color _cardBgColor = Color(0xFF212121);
+
 class _CoordinatorsState extends State<Coordinators> {
   @override
   Widget build(BuildContext context) {
@@ -61,39 +63,44 @@ class _CoordinatorsState extends State<Coordinators> {
                     height: 20,
                   ),
                   Card(
-                    child: Column(children: <Widget>[
-                      _buidProfile(
-                          "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
-                          "Hiren Vadher"),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      _buidProfile(
-                          "https://shahharsh77.github.io/VEYG/Sub/img/team/jj.png",
-                          "Hiren Vadher"),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      _buidProfile(
-                          "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
-                          "Hiren Vadher"),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      _buidProfile(
-                          "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
-                          "Hiren Vadher"),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      _buidProfile(
-                          "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
-                          "Hiren Vadher"),
-                    ]),
                     elevation: 20,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
+                    color: _cardBgColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(children: <Widget>[
+                        _buidProfile(
+                            "https://shahharsh77.github.io/VEYG/Sub/img/team/kunal.png",
+                            "Hiren Vadher"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _buidProfile(
+                            "https://shahharsh77.github.io/VEYG/Sub/img/team/jj.png",
+                            "Hiren Vadher"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _buidProfile(
+                            "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
+                            "Hiren Vadher"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _buidProfile(
+                            "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
+                            "Hiren Vadher"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _buidProfile(
+                            "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
+                            "Hiren Vadher"),
+                      ]),
+                    ),
+
                     //     color: _cardBgColor),
                     // SizedBox(height: 5),
                     // _inroduction(),
@@ -127,29 +134,42 @@ class _CoordinatorsState extends State<Coordinators> {
   }
 
   _buidProfile(String url, String name) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(url),
-          backgroundColor: Colors.black,
-          radius: 35,
-          child: ClipOval(
-            child: SizedBox(
-              height: 100,
-              width: 100,
-              child: Image.network(
-                "url",
-                fit: BoxFit.cover,
+    return Container(
+        child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      color: Color(0XFF515151),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ClipOval(
+              child: SizedBox(
+                height: 180,
+                width: 180,
+                child: Image.network(
+                  url,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
-        ),
-        title: Text(
-          name,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-        ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Center(
+              child: Text(
+                name,
+                style: GoogleFonts.comfortaa(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white70),
+              ),
+            ),
+          ),
+        ],
       ),
-    );
+    ));
   }
 }
