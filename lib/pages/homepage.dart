@@ -8,6 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:veyg_2020/pages/department_page.dart';
 import 'package:veyg_2020/pages/gallery/vegy2019.dart';
+import 'package:veyg_2020/pages/timeline/schedulr.dart';
 
 final digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -109,7 +110,14 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: 20.0),
                       _optionCard("Coordinators", Color(0xFFff9550)),
                       SizedBox(height: 20.0),
-                      _optionCard("Entertainment", Color(0xFF4975ff))
+                       GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TimelinePage())),
+                        child:_optionCard("Schedule", Color(0xFF4975ff)),
+                      ),
+                      
                     ],
                   ),
                 )
