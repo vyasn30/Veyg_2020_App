@@ -72,32 +72,44 @@ class _CoordinatorsState extends State<Coordinators> {
                       padding: const EdgeInsets.all(10.0),
                       child: Column(children: <Widget>[
                         _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/img/team/kunal.png",
-                            "Hiren Vadher"),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        _buidProfile(
                             "https://shahharsh77.github.io/VEYG/Sub/img/team/jj.png",
-                            "Hiren Vadher"),
+                            "Prof. Jaimin Jani"),
                         SizedBox(
                           height: 20,
                         ),
                         _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
-                            "Hiren Vadher"),
+                            "https://shahharsh77.github.io/VEYG/Sub/img/team/avani.png",
+                            "Prof.Avani Dedhia"),
                         SizedBox(
                           height: 20,
                         ),
                         _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
-                            "Hiren Vadher"),
+                            "https://shahharsh77.github.io/VEYG/Sub/img/team/kanu.png",
+                            "Prof.Kanu Patel"),
                         SizedBox(
                           height: 20,
                         ),
                         _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/Events/events'19_files/matty-lynn-barnes-kX-N8JQ7CAg-unsplash.jpg",
-                            "Hiren Vadher"),
+                            "https://shahharsh77.github.io/VEYG/Sub/img/team/kunal.png",
+                            "Prof.Kunalsinh Kathia"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _buidProfile(
+                            "https://shahharsh77.github.io/VEYG/Sub/img/team/ravi.png",
+                            "Prof.Ravindra Patel"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _buidProfile(
+                            "https://shahharsh77.github.io/VEYG/Sub/img/team/vd.png",
+                            "Prof.Vaidant Dixit"),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _buidProfile(
+                            "https://shahharsh77.github.io/VEYG/Sub/img/team/vishnu.png",
+                            "Prof.Vishnu Awasthi"),
                       ]),
                     ),
 

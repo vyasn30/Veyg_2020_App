@@ -22,7 +22,6 @@ class _TimelinePageState extends State<TimelinePage>
   List items1 = schedule1;
   List items2 = schedule2;
 
-
   @override
   void initState() {
     _tabController = new TabController(length: 2, vsync: this);
@@ -69,7 +68,7 @@ class _TimelinePageState extends State<TimelinePage>
           position: TimelinePosition.Right,
           itemCount: schedule2.length,
           itemBuilder: (context, position) {
-            return TimelineModel(itemCard(position,schedule2),
+            return TimelineModel(itemCard(position, schedule2),
                 icon: Icon(FontAwesomeIcons.chevronLeft));
           }),
     );
@@ -81,7 +80,7 @@ class _TimelinePageState extends State<TimelinePage>
           position: TimelinePosition.Left,
           itemCount: schedule1.length,
           itemBuilder: (context, position) {
-            return TimelineModel(itemCard(position,schedule1),
+            return TimelineModel(itemCard(position, schedule1),
                 icon: Icon(FontAwesomeIcons.chevronRight));
           }),
     );
@@ -96,18 +95,21 @@ class _TimelinePageState extends State<TimelinePage>
             children: <Widget>[
               Text(
                 items[position]["date"],
+                textAlign: TextAlign.left,
                 style: GoogleFonts.comfortaa(
-                    color: Colors.white, textStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
+                    color: Colors.white,
+                    textStyle:
+                        TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
-                items[position]["title"],
-                textAlign: TextAlign.justify,
+                items[position]["title"].toString().trimLeft().toLowerCase(),
+                textAlign: TextAlign.left,
                 style: GoogleFonts.comfortaa(
                   color: Colors.white,
-                  textStyle: TextStyle(fontSize: 16,color: Colors.white70),
+                  textStyle: TextStyle(fontSize: 16, color: Colors.white70),
                 ),
               )
             ]),

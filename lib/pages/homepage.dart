@@ -11,6 +11,9 @@ import 'package:veyg_2020/pages/coordinators.dart';
 import 'package:veyg_2020/pages/department_page.dart';
 import 'package:veyg_2020/pages/gallery/vegy2019.dart';
 import 'package:veyg_2020/pages/timeline/schedulr.dart';
+import 'package:flutter_awesome_alert_box/flutter_awesome_alert_box.dart';
+
+import 'department_page.dart';
 
 final digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -92,10 +95,58 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: <Widget>[
                       GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DepartmentPage())),
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            child: AlertDialog(
+                              title: Text("Select Department"),
+                              content: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 1,
+                                    child: FlatButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DepartmentPage()));
+                                      },
+                                      child: Text("Degree"),
+                                      color: Colors.blueAccent,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: FlatButton(
+                                      onPressed: () {},
+                                      child: Text("Diploma"),
+                                      color: Colors.blueAccent,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              actions: <Widget>[
+                                FlatButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DepartmentPage()));
+                                    },
+                                    child: null)
+                              ],
+                            ),
+                          );
+                        },
+                        // onTap: () => Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => DepartmentPage())),
                         child: _optionCard(
                           "Explore Events",
                           Color(0xFF8359ff),
@@ -107,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => GalleryExample())),
-                        child: _optionCard("About VEYG", Color(0xFF4975ff)),
+                        child: _optionCard("About", Color(0xFF4975ff)),
                       ),
                       SizedBox(height: 20.0),
                       GestureDetector(
