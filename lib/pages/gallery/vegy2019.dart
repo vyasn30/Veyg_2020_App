@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
@@ -19,8 +20,29 @@ class _GalleryExampleState extends State<GalleryExample> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           const ExampleAppBar(
-            title: "Veyg 2019 Images",
+            title: "About Veyg",
             showGoBack: true,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
+                color: Color(0XFF313131),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "“All work and no play, makes Jack a dull boy.” And imagine the wonders Jack can achieve if that play is mingled with engineering! Fun with Learning and Technology is what VEYG is all about! VEYG hosts a variety of events that include competitions, exhibitions, lectures as well as workshops of various engineering branches and is entirely organized by students under guidance of the faculty members.",
+                    style: GoogleFonts.cuprum(
+                        textStyle: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 25,
+                            wordSpacing: 10,
+                            fontWeight: FontWeight.w500)),
+                    textAlign: TextAlign.justify,
+                  ),
+                )),
           ),
           Flexible(
             child: GridView.builder(
@@ -121,7 +143,6 @@ class _GalleryPhotoViewWrapperState extends State<GalleryPhotoViewWrapper> {
               onPageChanged: onPageChanged,
               scrollDirection: widget.scrollDirection,
             ),
-            
           ],
         ),
       ),

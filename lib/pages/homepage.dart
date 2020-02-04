@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => GalleryExample())),
-                        child: _optionCard("VEYG_2019", Color(0xFF4975ff)),
+                        child: _optionCard("About VEYG", Color(0xFF4975ff)),
                       ),
                       SizedBox(height: 20.0),
                       GestureDetector(
@@ -118,14 +118,14 @@ class _HomePageState extends State<HomePage> {
                         child: _optionCard("Coordinators", Color(0xFFff9550)),
                       ),
                       SizedBox(height: 20.0),
-                      GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AboutPage())),
-                        child: _optionCard("About Veyg", Color(0xFF4975ff)),
-                      ),
-                      SizedBox(height: 20.0),
+                      // GestureDetector(
+                      //   onTap: () => Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => AboutPage())),
+                      //   child: _optionCard("About Veyg", Color(0xFF4975ff)),
+                      // ),
+                      // SizedBox(height: 20.0),
                       GestureDetector(
                         onTap: () => Navigator.push(
                             context,
