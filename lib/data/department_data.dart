@@ -54,7 +54,7 @@ List<Department> dept_data = [
       ],
     ),
   ),
-   Department(
+  Department(
     id: 4,
     name: "Non\nTechnical",
     image: "assets/department_images/sport.jpg",
@@ -67,5 +67,46 @@ List<Department> dept_data = [
       ],
     ),
   ),
-  
+  Department(
+    id: 5,
+    name: "Robotics",
+    image: "assets/department_images/robotics.jpg",
+    linearGradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        const Color(0xFF66B5F6),
+        const Color(0xFFBFE299),
+      ],
+    ),
+  ),
+];
+
+List<Department> diploma_data = [
+  Department(
+    id: 7,
+    name: "Technical",
+    image: "assets/department_images/dptech.jpg",
+    linearGradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        const Color(0xFF66B5F6),
+        const Color(0xFFBFE299),
+      ],
+    ),
+  ),
+  Department(
+    id: 8,
+    name: "Non-Technical",
+    image: "assets/department_images/dpnontech.jpg",
+    linearGradient: LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [
+        const Color(0xFF29524A),
+        const Color(0xFFB8C6DB),
+      ],
+    ),
+  ),
 ];

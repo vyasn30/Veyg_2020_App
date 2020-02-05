@@ -52,11 +52,13 @@ class _EventDetailsState extends State<EventDetails> {
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
                 titlePadding: EdgeInsets.all(15),
-                title: Text(
-                  event.name,
-                  style: GoogleFonts.comfortaa(
-                      textStyle:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                title: SafeArea(
+                  child: Text(
+                    event.name,
+                    style: GoogleFonts.comfortaa(
+                        textStyle: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w700)),
+                  ),
                 ),
                 background: Image.asset(
                   "assets/logo.png",

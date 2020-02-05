@@ -6,16 +6,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:veyg_2020/pages/about/about.dart';
 import 'package:veyg_2020/pages/coordinators.dart';
 import 'package:veyg_2020/pages/department_page.dart';
 import 'package:veyg_2020/pages/gallery/vegy2019.dart';
 import 'package:veyg_2020/pages/timeline/schedulr.dart';
-import 'package:flutter_awesome_alert_box/flutter_awesome_alert_box.dart';
 
 import 'department_page.dart';
 
 final digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+class DeptSelect {
+  final int idNum;
+  DeptSelect(this.idNum);
+}
 
 class HomePage extends StatefulWidget {
   @override
@@ -99,18 +102,24 @@ class _HomePageState extends State<HomePage> {
                           showDialog(
                             context: context,
                             child: AlertDialog(
+                              backgroundColor: Color(0xFFb2dffb),
                               title: Text("Select Department"),
                               content: Row(
                                 children: <Widget>[
                                   Expanded(
                                     flex: 1,
                                     child: FlatButton(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16)),
                                       onPressed: () {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    DepartmentPage()));
+                                                    DepartmentPage(
+                                                      deptSelect: DeptSelect(1),
+                                                    )));
                                       },
                                       child: Text("Degree"),
                                       color: Colors.blueAccent,
@@ -122,24 +131,24 @@ class _HomePageState extends State<HomePage> {
                                   Expanded(
                                     flex: 1,
                                     child: FlatButton(
-                                      onPressed: () {},
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16)),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DepartmentPage(
+                                                      deptSelect: DeptSelect(2),
+                                                    )));
+                                      },
                                       child: Text("Diploma"),
                                       color: Colors.blueAccent,
                                     ),
                                   ),
                                 ],
                               ),
-                              actions: <Widget>[
-                                FlatButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  DepartmentPage()));
-                                    },
-                                    child: null)
-                              ],
                             ),
                           );
                         },

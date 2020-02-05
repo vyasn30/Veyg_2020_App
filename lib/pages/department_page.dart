@@ -4,23 +4,33 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:veyg_2020/models/department.dart';
 import 'package:veyg_2020/pages/events_page.dart';
+import 'package:veyg_2020/pages/homepage.dart';
 import '../data/department_data.dart';
 
 class DepartmentPage extends StatefulWidget {
+  final DeptSelect deptSelect;
+  DepartmentPage({this.deptSelect});
   @override
   State<StatefulWidget> createState() {
-    return DepartmentState();
+    return DepartmentState(deptSelect: deptSelect);
   }
 }
 
 class DepartmentState extends State {
+  final DeptSelect deptSelect;
+  DepartmentState({Key key, @required this.deptSelect});
   final PageController ctrl = PageController(viewportFraction: 0.85);
   List<Department> deptartment_data;
+
   int currentPage = 0;
 
   @override
   void initState() {
-    deptartment_data = dept_data;
+    if (deptSelect.idNum == 1) {
+      deptartment_data = dept_data;
+    } else {
+      deptartment_data = diploma_data;
+    }
     ctrl.addListener(() {
       int next = ctrl.page.round();
 

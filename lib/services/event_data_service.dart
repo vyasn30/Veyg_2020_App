@@ -7,7 +7,10 @@ class EventDataService {
   static List<EventDetail> data;
 
   static fetchData() async {
-    var url = 'http://rajpar29.pythonanywhere.com/veyg';
+    var url;
+
+    url = 'http://rajpar29.pythonanywhere.com/veyg';
+
     try {
       var response = await http.get(url);
       if (response.statusCode == 200) {

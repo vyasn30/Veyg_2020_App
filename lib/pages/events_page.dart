@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:folding_cell/folding_cell/widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nice_button/nice_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:veyg_2020/models/department.dart';
 import 'package:veyg_2020/models/event.dart';
 import 'package:veyg_2020/models/event_detail_model.dart';
@@ -110,7 +112,7 @@ class EventsPage extends StatelessWidget {
           child: Text(
             "${eventList[index].introduction}",
             maxLines: 5,
-             overflow: TextOverflow.ellipsis,
+            overflow: TextOverflow.ellipsis,
             style: GoogleFonts.josefinSans(
               textStyle: TextStyle(
                   color: Color(0xFF2e282a),
@@ -134,6 +136,21 @@ class EventsPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
+                  NiceButton(
+                    width: 200,
+                    elevation: 8.0,
+                    radius: 52.0,
+                    text: "Register",
+                    gradientColors: [Color(0xffEC9F05), Color(0xffFF4E00)],
+                    onPressed: () async {
+                      var url = "https://event-registraion.firebaseapp.com/";
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
