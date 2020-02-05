@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:veyg_2020/pages/coordinators.dart';
+import 'package:veyg_2020/pages/coordinatorsdiploma.dart';
 import 'package:veyg_2020/pages/department_page.dart';
 import 'package:veyg_2020/pages/gallery/vegy2019.dart';
 import 'package:veyg_2020/pages/timeline/schedulr.dart';
@@ -171,10 +172,61 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(height: 20.0),
                       GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Coordinators())),
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            child: AlertDialog(
+                              backgroundColor: Color(0xFFb2dffb),
+                              title: Text("Select Department"),
+                              content: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 1,
+                                    child: FlatButton(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16)),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Coordinators()));
+                                      },
+                                      child: Text("Degree"),
+                                      color: Colors.blueAccent,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: FlatButton(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16)),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CoordinatorsDiploma()));
+                                      },
+                                      child: Text("Diploma"),
+                                      color: Colors.blueAccent,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+
+                        // onTap: () => Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => Coordinators())),
                         child: _optionCard("Coordinators", Color(0xFFff9550)),
                       ),
                       SizedBox(height: 20.0),

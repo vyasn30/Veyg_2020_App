@@ -1,32 +1,32 @@
 List<dynamic> schedule1 = [
   {
-    "title": "Inaugural Ceremony at the Auditorium",
+    "title": "Inaugural Ceremony at the Auditorium".trim(),
     "date": "9:30 AM - 10:00 AM",
     "description": "",
     "day": 1
   },
   {
-    "title": "Gully Cricket \n Mind Games \n Masterchef \n",
+    "title": "Gully Cricket\nMind Games \nMasterchef \n".trim(),
     "date": "10:00 AM - 12:30 PM",
     "description": "",
     "day": 1
   },
   {
     "title":
-        "FINAL YEAR PROJECT COMPETITION \n DIY COMPETITION \n IDEA THAT CHANGE THE WORLD ",
+        "Final Year Project Competition \nDiy Competition \nIdea That Change The World ",
     "date": "10:00 AM - 12:30 PM",
     "description": "",
     "day": 1
   },
   {
-    "title": "LUNCH BREAK \n",
+    "title": "Lunch Break \n",
     "date": "12:30 PM - 01:15 PM",
     "description": "",
     "day": 1
   },
   {
     "title":
-        "CAD-MASTERS \n LATHE-CRAFT \n Techson \n Techofun \n Dhundte Reh Jaoge \n Career Molding \n Next Big Shots",
+        "CAD-Master \nLathe-Craft \nTechson \nTechofun \nDhundte Reh Jaoge \nCareer Molding \nNext Big Shots",
     "date": "1:15 PM - 04:30 PM",
     "description": "",
     "day": 1
@@ -42,25 +42,25 @@ List<dynamic> schedule1 = [
 List<dynamic> schedule2 = [
   {
     "title":
-        "MECHANICAL SCAVENGERS \n Techofun \n Viditech \n IS PAAR SE US PAAR \n Career Molding \n Cipher Zone \n",
+        "Mechanical Scavengers \nTechofun \nViditech \nIs Paar Se Us Paar \nCareer Molding \nCipher Zone \n",
     "date": "09:30 AM - 11:45 AM",
     "description": "",
     "day": 2
   },
   {
-    "title": "Gully Cricket \n Mind Games \n Masterchef \n",
+    "title": "Gully Cricket \nMind Games \nMasterchef \n",
     "date": "09:30 AM - 11:45 AM",
     "description": "",
     "day": 2
   },
   {
-    "title": "LUNCH BREAK",
+    "title": "Lunch Break",
     "date": "11:45 AM - 12:30 PM",
     "description": "",
     "day": 2
   },
   {
-    "title": "MECHANICAL SCAVENGERS",
+    "title": "Mechanical Scavengers",
     "date": "12:30 PM - 2:15PM",
     "description": "",
     "day": 2
@@ -72,19 +72,19 @@ List<dynamic> schedule2 = [
     "day": 2
   },
   {
-    "title": "AISA DES HAI MERA",
+    "title": "Aisa Des Hai Mera",
     "date": "12:30 PM - 2:15PM",
     "description": "",
     "day": 2
   },
   {
-    "title": "Career Molding \n Cipher Zone \n",
+    "title": "Career Molding \nCipher Zone \n",
     "date": "12:30 PM - 2:15PM",
     "description": "",
     "day": 2
   },
   {
-    "title": "Gully Cricket \n Mind Games \n Masterchef \n",
+    "title": "Gully Cricket \nMind Games \nMasterchef \n",
     "date": "12:30 PM - 2:15PM",
     "description": "",
     "day": 2

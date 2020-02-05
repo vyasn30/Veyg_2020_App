@@ -105,7 +105,7 @@ class _TimelinePageState extends State<TimelinePage>
                 height: 10,
               ),
               Text(
-                items[position]["title"].toString().trimLeft().toLowerCase(),
+                items[position]["title"],
                 textAlign: TextAlign.left,
                 style: GoogleFonts.comfortaa(
                   color: Colors.white,

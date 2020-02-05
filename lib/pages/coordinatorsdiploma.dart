@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Coordinators extends StatefulWidget {
+class CoordinatorsDiploma extends StatefulWidget {
   @override
   _CoordinatorsState createState() => _CoordinatorsState();
 }
 
 const Color _cardBgColor = Color(0xFF212121);
 
-class _CoordinatorsState extends State<Coordinators> {
+class _CoordinatorsState extends State<CoordinatorsDiploma> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -72,58 +72,26 @@ class _CoordinatorsState extends State<Coordinators> {
                       padding: const EdgeInsets.all(10.0),
                       child: Column(children: <Widget>[
                         _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/img/team/jj.png",
-                            "Prof. Jaimin Jani",
-                            "jaimin.jani@saffrony.ac.in",
-                            "CE-IT"),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/img/team/avani.png",
-                            "Prof.Avani Dedhia",
-                            "avani.dedhia@saffrony.ac.in",
+                            "assets/coordinator/mehul.png",
+                            "Prof. Mehul Patel",
+                            "mehul.patel@saffrony.ac.in",
                             "Civil"),
                         SizedBox(
                           height: 20,
                         ),
                         _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/img/team/kanu.png",
-                            "Prof.Kanu Patel",
-                            "kanu.patel@saffrony.ac.in",
-                            "EC"),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/img/team/kunal.png",
-                            "Prof.Kunalsinh Kathia",
-                            "kunalsinh.kathia@saffrony.ac.in",
+                            "assets/coordinator/keyur.png",
+                            "Prof. Keyur Modi",
+                            "keyur.modi@saffrony.ac.in",
                             "ME"),
                         SizedBox(
                           height: 20,
                         ),
                         _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/img/team/ravi.png",
-                            "Prof.Ravindra Patel",
-                            "ravindra.patel@saffrony.ac.in",
-                            "CE-IT"),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/img/team/vd.png",
-                            "Prof.Vaidant Dixit",
-                            "vaidant.dixit@saffrony.ac.in",
-                            "ME"),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        _buidProfile(
-                            "https://shahharsh77.github.io/VEYG/Sub/img/team/vishnu.png",
-                            "Prof.Vishnu Awasthi",
-                            "vishnu.awasthi@saffrony.ac.in",
-                            "EC"),
+                            "assets/coordinator/sachin.png",
+                            "Prof. Sachin Patel",
+                            "sachin.patel@saffrony.ac.in",
+                            "Civil"),
                       ]),
                     ),
 
@@ -172,14 +140,7 @@ class _CoordinatorsState extends State<Coordinators> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ClipOval(
-              child: SizedBox(
-                height: 180,
-                width: 180,
-                child: Image.network(
-                  url,
-                  fit: BoxFit.cover,
-                ),
-              ),
+              child: SizedBox(height: 180, width: 180, child: Image.asset(url)),
             ),
           ),
           Padding(
