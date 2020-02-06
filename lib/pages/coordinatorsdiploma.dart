@@ -72,9 +72,9 @@ class _CoordinatorsState extends State<CoordinatorsDiploma> {
                       padding: const EdgeInsets.all(10.0),
                       child: Column(children: <Widget>[
                         _buidProfile(
-                            "assets/coordinator/mehul.png",
-                            "Prof. Mehul Patel",
-                            "mehul.patel@saffrony.ac.in",
+                            "assets/coordinator/mahesh.png",
+                            "Prof. Mahesh Patel",
+                            "mahesh.patel@saffrony.ac.in",
                             "Civil"),
                         SizedBox(
                           height: 20,

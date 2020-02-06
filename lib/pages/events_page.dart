@@ -143,7 +143,7 @@ class EventsPage extends StatelessWidget {
                     text: "Register",
                     gradientColors: [Color(0xffEC9F05), Color(0xffFF4E00)],
                     onPressed: () async {
-                      var url = "https://event-registraion.firebaseapp.com/";
+                      var url = "https://event-registraion.firebaseapp.com/d";
                       if (await canLaunch(url)) {
                         await launch(url);
                       } else {

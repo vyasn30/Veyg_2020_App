@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nice_button/NiceButton.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:veyg_2020/models/event_detail_model.dart';
 import '../models/event.dart';
@@ -104,23 +105,38 @@ class _EventDetailsState extends State<EventDetails> {
   }
 
   // _bottomBar() {
-  //   return BottomAppBar(
-  //     color: Color(0xFF323232),
-  //     child: RaisedButton.icon(
-  //       color: Color(0xFF6200ee),
-  //       icon: Icon(
-  //         FontAwesomeIcons.download,
-  //         color: Colors.white70,
-  //       ),
-  //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-  //       label: Text(
-  //         "Download PDF",
-  //         style: TextStyle(color: Colors.white70, fontSize: 20),
-  //       ),
-  //       onPressed: () => _download(event.pdfUrl),
-  //     ),
+  //   return NiceButton(
+  //     width: 300,
+  //     elevation: 8.0,
+  //     radius: 52.0,
+  //     text: "Register",
+  //     gradientColors: [Color(0xffEC9F05), Color(0xffFF4E00)],
+  //     onPressed: () async {
+  //       var url = "https://event-registraion.firebaseapp.com/d";
+  //       if (await canLaunch(url)) {
+  //         await launch(url);
+  //       } else {
+  //         throw 'Could not launch $url';
+  //       }
+  //     },
   //   );
-  // }
+    //   return BottomAppBar(
+    //     color: Color(0xFF323232),
+    //     child: RaisedButton.icon(
+    //       color: Color(0xFF6200ee),
+    //       icon: Icon(
+    //         FontAwesomeIcons.download,
+    //         color: Colors.white70,
+    //       ),
+    //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    //       label: Text(
+    //         "Download PDF",
+    //         style: TextStyle(color: Colors.white70, fontSize: 20),
+    //       ),
+    //       onPressed: () => _download(event.pdfUrl),
+    //     ),
+    //   );
+  }
 
   _singleLine(String title, String description) {
     return Container(

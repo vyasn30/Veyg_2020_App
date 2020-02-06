@@ -9,7 +9,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="veyg_2020"
+        android:label="VEYG_2K20"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -309,21 +309,21 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              CircleAvatar(
-                                radius: 30.0,
-                                backgroundColor: bgColour,
-                                child: Icon(
-                                  FontAwesomeIcons.book,
-                                  color: Colors.white,
-                                ),
-                              ),
+                              // CircleAvatar(
+                              //   radius: 30.0,
+                              //   backgroundColor: bgColour,
+                              //   child: Icon(
+                              //     FontAwesomeIcons.book,
+                              //     color: Colors.white,
+                              //   ),
+                              // ),
                             ],
                           ),
                           SizedBox(
                             height: 20.0,
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
                                 optionTitle,
